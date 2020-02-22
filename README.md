@@ -9,7 +9,7 @@ A &and; C &rarr; &not;B\
 B &and; C &rarr; &not;A\
 Implications that we find encoded within the nodes of our data structure in case we process the rule within NATMS.
 
-The algorithm is taking from *Johan De Kleer. A general labeling algorithm for assumption-based truth maintenance. InAAAI, volume 88, pages188–192, 198* and is implemented in Python. 
+The algorithm is taking from [Johan De Kleer. A general labeling algorithm for assumption-based truth maintenance. InAAAI, volume 88, pages188–192, 198](https://www.aaai.org/Papers/AAAI/1988/AAAI88-034.pdf) and is implemented in Python. 
 Compared to the algorithm indicated, however, it has been modified the third point that you are going to add in the NOGOOD function. In fact, instead of searching within the *antecendents* of the NoGood node justifications, if &not;A is named, as indicated, it was necessary to perform the search for A. This change was made because without it the examples given did not give the same results.
 
 In addition to this substantial modification, two other refinements have been made that solve some problems during the tests.
@@ -22,5 +22,5 @@ To solve this problem it has been necessary to consider also the denied assumpti
 
 A &rarr; b , &not; A &rarr; b
 
-in which we will have as a result the node b with a single environment {A} when in reality it should also be present {$\neg A$}, so the label is therefore not complete.
+in which we will have as a result the node b with a single environment {A} when in reality it should also be present {&not;A}, so the label is therefore not complete.
 This change solves this problem without affecting the performance and the results of the previous changes.
